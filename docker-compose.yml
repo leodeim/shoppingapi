@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  api:
+    image: 'shopping-api:latest'
+    build:
+      context: .
+    container_name: ${APP_NAME}
+    ports:
+      - ${API_PORT}:8080
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/${APP_NAME}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+      - POPULATE_DEV_DATA=${ADD_TEST_DATA}
+  db:
+    image: postgres:${PG_VERSION}
+    ports:
+      - ${POSTGRES_PORT}:5432
+    env_file:
+      - ./.env
+    container_name: ${APP_NAME}-db
+    environment:
+      - POSTGRES_DB=${APP_NAME}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
