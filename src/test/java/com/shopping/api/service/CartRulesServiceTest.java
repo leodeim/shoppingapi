@@ -3,7 +3,6 @@ package com.shopping.api.service;
 import com.shopping.api.domain.CartRuleType;
 import com.shopping.api.domain.dto.CartRuleResponseTO;
 import com.shopping.api.domain.dto.CartRuleTO;
-import com.shopping.api.domain.dto.ProductResponseTO;
 import com.shopping.api.entity.CartRuleEntity;
 import com.shopping.api.repo.CartRulesRepository;
 import org.junit.jupiter.api.Assertions;

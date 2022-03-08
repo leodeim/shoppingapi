@@ -1,7 +1,6 @@
 package com.shopping.api.service;
 
 import com.shopping.api.domain.ProductCategory;
-import com.shopping.api.domain.dto.CartItemResponseTO;
 import com.shopping.api.domain.dto.ProductResponseTO;
 import com.shopping.api.domain.dto.ProductTO;
 import com.shopping.api.entity.ProductEntity;
