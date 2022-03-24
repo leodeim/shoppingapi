@@ -29,8 +29,8 @@ dependencies {
 	implementation'org.postgresql:postgresql'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-	testCompileOnly 'org.projectlombok:lombok:1.18.16'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+	testCompileOnly 'org.projectlombok:lombok:1.18.22'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	compileOnly 'io.springfox:springfox-swagger-ui:3.0.0'
 }
